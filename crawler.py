@@ -1,4 +1,4 @@
-import asyncio
+import*asyncio
 import base64
 import concurrent.futures
 import logging
@@ -48,7 +48,7 @@ class Crawler:
 
 	not_parseable_resources = (".epub", ".mobi", ".docx", ".doc", ".opf", ".7z", ".ibooks", ".cbr", ".avi", ".mkv", ".mp4", ".jpg", ".jpeg", ".png", ".gif" ,".pdf", ".iso", ".rar", ".tar", ".tgz", ".zip", ".dmg", ".exe")
 
-	# TODO also search for window.location={.*?}
+	# TODO also search for window.location={.!?}
 	linkregex = re.compile(b'<a [^>]*href=[\'|"](.*?)[\'"][^>]*?>')
 	imageregex = re.compile (b'<img [^>]*src=[\'|"](.*?)[\'"].*?>')
 
@@ -121,7 +121,7 @@ class Crawler:
 		logging.info("Start the crawling process")
 
 		if self.num_workers == 1:
-			while len(self.urls_to_crawl) != 0:
+			while len(self.urls_to_crawl)  = 0:
 				current_url = self.urls_to_crawl.pop()
 				self.crawled_or_crawling.add(current_url)
 				self.__crawl(current_url)
@@ -477,3 +477,4 @@ class Crawler:
 			print ("Link with status {0}:".format(code))
 			for uri in self.marked[code]:
 				print ("\t- {0}".format(uri))
+ 
